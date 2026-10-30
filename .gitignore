@@ -1,5 +1,59 @@
-target/
-.idea/
-.vscode/
-*.iml
-.DS_Store
+# Webkitten
+
+Webkitten is a Java desktop browser project built on JavaFX WebView, which provides a WebKit-backed browsing surface for desktop applications.
+
+## Included features
+
+- Multi-tab browsing
+- Address bar navigation
+- Back, forward, reload, home controls
+- Bookmarks and quick bookmark menu
+- Browsing history panel
+- Simple download manager that saves pages to a local downloads folder
+- Custom browser chrome and toolbar
+- Embedded dev tools panel for status and alert output
+- JavaFX-based desktop shell
+
+## Tech stack
+
+- Java 17+
+- Maven
+- JavaFX 21
+- WebView / WebKit backend
+
+## Run the app
+
+```bash
+mvn clean javafx:run
+```
+
+## Project layout
+
+- `pom.xml` — Maven configuration
+- `src/main/java/com/webkitten/browser/Main.java` — browser UI and application logic
+
+## Notes
+
+This project uses JavaFX's `WebView`, which delegates to the operating system's WebKit implementation. That makes it the best Java option for a browser shell without replacing the browser engine with a custom rendering layer.
+
+If you want a more advanced browser in a future step, the next additions could include:
+
+- tab drag-and-drop
+- secure certificate handling
+- a real DOM inspector
+- cookie management
+- custom search engine integration
+- a full menu-based browser shell
+
+## Browser architecture
+
+The UI is intentionally organized around a modern tabbed desktop browser design:
+
+- toolbar with navigation and address controls
+- tab pane for multiple pages
+- right-side sidebar for bookmarks, history, and downloads
+- bottom dev tools panel for debugging state and page events
+
+This gives the project a good base for expanding into a heavier browser product later.
+
+
